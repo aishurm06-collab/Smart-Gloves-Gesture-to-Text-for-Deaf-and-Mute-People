@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Smart Gloves Project is an IoT-based wearable system designed to detect hand gestures and convert them into meaningful outputs. The project aims to improve communication and interaction through smart sensing and embedded technology.
+The Smart Gloves Project is an IoT-based wearable system designed to detect hand gestures using Flex sensor and convert them into Text outputs. The project aims to improve communication and interaction through smart sensing and embedded technology.
 
 ## Features
 
@@ -14,11 +14,10 @@ The Smart Gloves Project is an IoT-based wearable system designed to detect hand
 
 ## Components Used
 
-* ESP32 / Arduino Microcontroller
-* Flex Sensors or Gesture Sensors
-* Communication Module
-* Power Supply
-* Connecting Wires and Supporting Components
+* ESP32 Microcontroller
+* Flex Sensors 
+* Resistor
+* Connecting Wires 
 
 ## Technologies
 
@@ -26,7 +25,6 @@ The Smart Gloves Project is an IoT-based wearable system designed to detect hand
 * Arduino IDE
 * IoT
 * Sensor Interfacing
-* Electronics and Communication Engineering Concepts
 
 ## Applications
 
