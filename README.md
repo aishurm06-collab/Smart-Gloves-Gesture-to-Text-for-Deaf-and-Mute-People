@@ -26,6 +26,7 @@ The Smart Gloves Project is an IoT-based wearable system designed to detect hand
 * Arduino IDE
 * IoT
 * Sensor Interfacing
+* Serial Bluetooth Terminal
 
 ## Applications
 
