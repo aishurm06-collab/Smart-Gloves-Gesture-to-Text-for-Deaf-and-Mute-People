@@ -17,7 +17,8 @@ The Smart Gloves Project is an IoT-based wearable system designed to detect hand
 * ESP32 Microcontroller
 * Flex Sensors 
 * Resistor
-* Connecting Wires 
+* Connecting Wires
+* Power Supply 
 
 ## Technologies
 
