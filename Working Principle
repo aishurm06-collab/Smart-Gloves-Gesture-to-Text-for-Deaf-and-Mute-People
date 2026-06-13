@@ -1,0 +1,38 @@
+## Working Principle
+
+The Smart Glove uses three flex sensors connected to an ESP32 microcontroller. The flex sensors detect finger bending and generate analog values. Based on predefined threshold values, the ESP32 identifies different hand gestures.
+
+The detected gestures are converted into predefined messages such as:
+
+* HELLO
+* WATER
+* HELP
+* YES
+* NO
+* THANK YOU
+
+The recognized message is transmitted wirelessly using Bluetooth Serial communication, allowing real-time communication assistance.
+
+## Hardware Used
+
+* ESP32 Development Board
+* 3 Flex Sensors
+* Bluetooth (ESP32 Built-in)
+* Power Supply
+* Connecting Wires
+
+## Software Used
+
+* Arduino IDE
+* Embedded C/C++
+
+## Sample Gestures
+
+| Gesture Pattern | Output    |
+| --------------- | --------- |
+| 1 0 0           | HELLO     |
+| 0 1 0           | WATER     |
+| 0 0 1           | HELP      |
+| 1 1 0           | YES       |
+| 1 0 1           | NO        |
+| 0 1 1           | THANK YOU |
