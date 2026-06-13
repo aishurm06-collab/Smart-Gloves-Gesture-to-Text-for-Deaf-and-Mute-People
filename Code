@@ -1,0 +1,66 @@
+#include "BluetoothSerial.h"
+BluetoothSerial SerialBT;
+
+int flex1 = 34;
+int flex2 = 35;
+int flex3 = 32;
+
+// Threshold values (Change according to your sensor)
+int th1 = 1500;
+int th2 = 1500;
+int th3 = 1500;
+
+String lastGesture = "";
+
+void setup() {
+  Serial.begin(115200);
+  SerialBT.begin("SmartGlove");
+
+  Serial.println("Bluetooth Started: SmartGlove");
+  SerialBT.println("Smart Glove Connected");
+}
+
+void loop() {
+
+  int v1 = analogRead(flex1);
+  int v2 = analogRead(flex2);
+  int v3 = analogRead(flex3);
+
+  Serial.print("F1: "); Serial.print(v1);
+  Serial.print("  F2: "); Serial.print(v2);
+  Serial.print("  F3: "); Serial.println(v3);
+
+  int b1 = (v1 > th1) ? 1 : 0;
+  int b2 = (v2 > th2) ? 1 : 0;
+  int b3 = (v3 > th3) ? 1 : 0;
+
+  String gesture = "";
+
+  if (b1 == 1 && b2 == 0 && b3 == 0) {
+    gesture = "HELLO";
+  }
+  else if (b1 == 0 && b2 == 1 && b3 == 0) {
+    gesture = "WATER";
+  }
+  else if (b1 == 0 && b2 == 0 && b3 == 1) {
+    gesture = "HELP";
+  }
+  else if (b1 == 1 && b2 == 1 && b3 == 0) {
+    gesture = "YES";
+  }
+  else if (b1 == 1 && b2 == 0 && b3 == 1) {
+    gesture = "NO";
+  }
+  else if (b1 == 0 && b2 == 1 && b3 == 1) {
+    gesture = "THANK YOU";
+  }
+
+  // Print only when gesture changes
+  if (gesture != "" && gesture != lastGesture) {
+    Serial.println("Gesture: " + gesture);
+    SerialBT.println("Gesture: " + gesture);
+    lastGesture = gesture;
+  }
+
+  delay(300);
+}
